@@ -1,0 +1,215 @@
+:root {
+    /* Primary */
+    --p-main-background: hsl(233, 47%, 7%);                    
+    --p-card-background: hsl(244, 38%, 16%);
+    --p-accent: hsl(277, 64%, 61%);
+    --p-image: hsl(277, 81%, 38%);
+
+    /* Neutral */
+    --n-main-heading-stats: hsl(0, 0%, 100%);
+    --n-main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --n-stat--headings: hsla(0, 0%, 100%, 0.6);
+}
+
+
+* {
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: var(--p-main-background);
+}
+
+
+.card, .attribution {
+    background: var(--p-card-background);
+    border-radius: .5rem;
+    color: var(--n-main-heading-stats);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin: 6rem 1.5rem;;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;;
+}
+
+.card .image-header {
+    width: 100%;
+    height: 16rem;
+    border-radius: .5rem .5rem 0 0;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 2rem;
+    background: url('images/image-header-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card .image-header::after {
+    content: '';
+    background: var(--p-image);
+    border-radius: .5rem .5rem 0 0;
+    opacity: .58;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.wrap {
+    margin: 2rem;
+}
+
+.card h2,
+.card h2 pink {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.card h2 pink {
+    color: var(--p-accent);
+}
+
+.card h3 {
+    color: var(--n-main-heading-stats);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.card li {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+
+.card .main-text {
+    color: var(--n-main-paragraph);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.6rem;
+}
+
+.card .main-paragraph {
+    color: var(--n-main-paragraph);
+    font-family: 'Inter', sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+
+.attribution {
+    padding: .1rem;
+}
+
+.attribution a {
+    color: var(--p-accent);
+    text-decoration: none;
+
+    transition: all ease .3s;
+}
+
+.attribution a:hover,
+.attribution a:active {
+    color: var(--n-main-paragraph);
+}
+
+
+
+@media only screen and (min-width: 850px) {
+    .card, .attribution {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: row-reverse;
+        max-width: 1110px;
+        margin: 6rem 1.5rem;
+        padding: 0;
+        position: relative;
+
+        transition: box-shadow ease .6s;
+    }
+
+    .card:hover,
+    .card:active,
+    .attribution:hover,
+    .attribution:active {
+        box-shadow: 0 0 .7rem -.15rem var(--p-image);
+    }
+
+    .card .image-header,
+    .card .wrap {
+        height: auto;
+        width: 50%;
+        margin: 0;
+        flex: 1;
+    }
+
+    .card .image-header {
+        border-radius: 0 .5rem .5rem 0;
+        background: url('images/image-header-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .card .image-header:after {
+        border-radius: 0 .5rem .5rem 0;
+    }
+
+    .card .wrap {
+        text-align: left;
+        padding: 5rem;
+    }
+
+    .card .main-text {
+        margin-bottom: 5rem;
+        padding-right: 1rem;
+    }
+
+    .card h2,
+    .card h2 pink {
+        font-size: 2.5rem;
+    }
+
+    .card h2 {
+        margin-bottom: 2rem;
+    }
+
+    .card ul {
+        display: flex;
+    }
+
+    .card li {
+        display: inline-block;
+        width: 33.33333333%;
+        margin: 0;
+    }
+
+
+    .attrubution {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .attribution .wrap {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 1160px) {
+    .card, .attribution {
+        margin: 6rem auto;
+    }
+}
